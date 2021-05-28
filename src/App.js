@@ -6,6 +6,7 @@ function App() {
   return (
     <div className="App">
       <Route exact path='/' component={Home} />
+      
       this is a new app sup
     </div>
   );
