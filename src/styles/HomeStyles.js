@@ -6,14 +6,14 @@ export const Wrapper = styled.div`
     flex: 1;
     height: 100%;
     
-    outline: 2px dotted orange;
+    outline: 5px dotted orange;
 }
 
 main {
   background: #f0f0f0;
   display: flex;
   flex-direction: row;
-  outline: 5px double red;
+  /* outline: 5px double red; */
 
   @media only screen and (max-aspect-ratio: 8/7) {
     main {

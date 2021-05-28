@@ -17,7 +17,7 @@ export default function Scene({ setBg }) {
   // change cursor on hovered state
   useEffect(() => {
     document.body.style.cursor = hovered ? 'none' : `url('data:image/svg+xml;base64,${btoa(
-      '<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="16" cy="16" r="10" fill="#E8B059"/></svg>'
+      '<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="16" cy="16" r="10" fill="#A0A4d9"/></svg>'
     )}'), auto`
   }, [hovered])
 
@@ -44,7 +44,7 @@ export default function Scene({ setBg }) {
       coat: mode && !hovered ? 0.04 : 1,
       ambient: mode && !hovered ? 1.5 : 0.5,
       env: mode && !hovered ? 0.4 : 1,
-      color: hovered ? '#E8B059' : mode ? '#202020' : 'white',
+      color: hovered ? '#A0A4D9' : mode ? '#202020' : 'white',
       config: (n) => n === 'wobble' && hovered && { mass: 2, tension: 1000, friction: 10 }
     },
     [mode, hovered, down]
@@ -54,7 +54,7 @@ export default function Scene({ setBg }) {
     <>
       <PerspectiveCamera makeDefault position={[0, 0, 4]} fov={75}>
         <a.ambientLight intensity={ambient} />
-        <a.pointLight ref={light} position-z={-15} intensity={env} color="#F8C069" />
+        <a.pointLight ref={light} position-z={-15} intensity={env} color="#BABEF3" />
       </PerspectiveCamera>
       <Suspense fallback={null}>
         <a.mesh
@@ -67,7 +67,7 @@ export default function Scene({ setBg }) {
             setDown(false)
             // Toggle mode between dark and bright
             setMode(!mode)
-            setBg({ background: !mode ? '#202020' : '#f0f0f0', fill: !mode ? '#f0f0f0' : '#202020' })
+            setBg({ background: !mode ? '#27292D' : '#f0f0f0', fill: !mode ? '#f0f0f0' : '#202020' })
           }}>
           <sphereBufferGeometry args={[1, 64, 64]} />
           <AnimatedMaterial color={color} envMapIntensity={env} clearcoat={coat} clearcoatRoughness={0} metalness={0.1} />
