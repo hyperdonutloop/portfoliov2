@@ -17,7 +17,7 @@ export default function Scene({ setBg }) {
   // change cursor on hovered state
   useEffect(() => {
     document.body.style.cursor = hovered ? 'none' : `url('data:image/svg+xml;base64,${btoa(
-      '<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="16" cy="16" r="10" fill="#A0A4d9"/></svg>'
+      '<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="15" cy="15" r="5" fill="#A0A4d9"/></svg>'
     )}'), auto`
   }, [hovered])
 
@@ -67,7 +67,7 @@ export default function Scene({ setBg }) {
             setDown(false)
             // Toggle mode between dark and bright
             setMode(!mode)
-            setBg({ background: !mode ? '#27292D' : '#f0f0f0', fill: !mode ? '#f0f0f0' : '#202020' })
+            setBg({ background: !mode ? '#27292D' : '#f0f0f0', fill: !mode ? '#f0f0f0' : '#1f2023' })
           }}>
           <sphereBufferGeometry args={[1, 64, 64]} />
           <AnimatedMaterial color={color} envMapIntensity={env} clearcoat={coat} clearcoatRoughness={0} metalness={0.1} />

@@ -9,13 +9,14 @@ import { Wrapper } from 'styles/HomeStyles'
 
 export default function Home() {
   const [{ background, fill }, set] = useSpring({ background: '#f0f0f0', fill: '#202020'}, [])
+
   return (
     <Wrapper>
     
     <a.main style={{ background }}>
       <Canvas className='canvas' pixelRatio={[1, 2]}>
         <Scene setBg={set} />
-        <OrbitControls enablePan={false} enableZoom={false} maxPolarAngle={Math.PI / 2} minPolarAngle={Math.PI / 2} />
+        <OrbitControls enablePan={false} enableZoom={false} maxPolarAngle={Math.PI / 2} minPolarAngle={Math.PI / 2} passive={false}/>
       </Canvas>
       <Overlay fill={fill} />
     </a.main>
