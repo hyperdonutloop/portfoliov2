@@ -12,11 +12,14 @@ export default function Home() {
 
   return (
     <Wrapper>
+      <div className='main-section'>
+        this is main
+      </div>
     
     <a.main style={{ background }}>
       <Canvas className='canvas' pixelRatio={[1, 2]}>
         <Scene setBg={set} />
-        <OrbitControls enablePan={false} enableZoom={false} maxPolarAngle={Math.PI / 2} minPolarAngle={Math.PI / 2} passive={false}/>
+        <OrbitControls enablePan={false} enableZoom={false} maxPolarAngle={Math.PI / 2} minPolarAngle={Math.PI / 2} />
       </Canvas>
       <Overlay fill={fill} />
     </a.main>
